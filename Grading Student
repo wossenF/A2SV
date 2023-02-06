@@ -1,0 +1,14 @@
+
+def gradingStudents(grades):
+    newGrade=[]
+    for i in grades:
+         if  i < 38:
+            newGrade.append(i)
+         elif i>=38 and i<=100:
+            difference = i%5
+            if 5-difference >=3:
+                 newGrade.append(i)
+            elif 5-dif <=2 :
+                 i+= (5-difference)
+                 newGrade.append(i)
+    return newGrade 
