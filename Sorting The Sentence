@@ -1,0 +1,8 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        word=s[::-1].split()
+        word.sort()
+        sentence=[]
+        for i in word:
+            sentence.append(i[1:][::-1])
+        return " ".join(sentence)
