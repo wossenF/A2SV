@@ -1,0 +1,12 @@
+class Solution:
+    def reverseParentheses(self, s: str) -> str:
+        index=0
+        length=len(s)
+        while '(' in s:
+            for i in range(length):
+                if s[i] == '(':
+                    index = i
+                elif s[i] == ')':
+                    s = s.replace(s[index:i+1], s[index+1:i][::-1])
+                    break
+        return s
