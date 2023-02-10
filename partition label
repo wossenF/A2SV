@@ -1,0 +1,17 @@
+class Solution:
+    def partitionLabels(self, s: str) -> List[int]:
+        store={}
+        for index,char in enumerate(s):
+            store[char]=index
+        print(store)  
+        size=0
+        res=[]
+        end=0
+        for i,c in enumerate(s):
+            size+=1
+            if store[c]>end:
+                end=store[c]
+            if i==  end:
+                res.append(size)
+                size=0
+        return res      
