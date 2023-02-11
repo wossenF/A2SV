@@ -1,0 +1,11 @@
+def maxScore(self, cardPoints: List[int], k: int) -> int:
+        length= len(cardPoints)
+        total = sum(cardPoints)
+        remain= length- k
+        subarray_sum = sum(cardPoints[:remain])
+        min_sum = subarray_sum
+        for i in range(remain,length):
+            subarray_sum += cardPoints[i]
+            subarray_sum -= cardPoints[i - remain]
+            min_sum = min(min_sum, subarray_sum)
+        return total - min_sum
