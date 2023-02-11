@@ -1,0 +1,14 @@
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        LinkedList =[]
+        while head:
+            LinkedList.append(head.val) 
+            head=head.next
+        LinkedList=LinkedList[::-1]
+        ans=ListNode(0) 
+        temp=ans
+        for i in LinkedList:
+            temp.next=ListNode(i) 
+            temp=temp.next
+        return ans.next 
+        
