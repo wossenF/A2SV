@@ -1,0 +1,13 @@
+def totalFruit(self, fruits: List[int]) -> int:
+        basket = defaultdict(int)
+        i=j=result=0
+        length=len(fruits)
+        for i in range(length):
+            basket[fruits[i]] += 1
+            while len(basket) > 2:
+                basket[fruits[j]] -= 1
+                if basket[fruits[j]] == 0:
+                    del basket[fruits[j]]
+                j += 1
+            result = max(result, i - j + 1)
+        return result
