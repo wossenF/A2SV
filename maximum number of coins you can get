@@ -1,0 +1,12 @@
+def maxCoins(self, piles: List[int]) -> int:
+        piles.sort()
+        ans=0
+        count=0
+        l=len(piles)-2
+        if len(piles)==3:
+            return piles[1]
+        while l>=0 and count<len(piles)//3:
+            ans+=piles[l]
+            l-=2
+            count+=1
+        return ans
