@@ -1,0 +1,11 @@
+def productExceptSelf(self, nums: List[int]) -> List[int]:
+        
+        pre = 1
+        post = 1
+        answer=len(nums)*[1]
+        for i in range(len(nums)):
+            answer[i] *= pre
+            pre = pre*nums[i]
+            answer[len(nums)-i-1] *= post
+            post = post*nums[len(nums)-i-1]
+        return(answer)
