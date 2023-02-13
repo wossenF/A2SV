@@ -7,4 +7,4 @@ if n%a==0:
 	value0=n/a
 else:
 	value0=n/a+1
-print(value*value0)
+return value* value0
