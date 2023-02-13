@@ -1,0 +1,14 @@
+def maxOperations(self, nums: List[int], k: int) -> int:
+        nums.sort()
+        result=0
+        n=0
+        m=len(nums)-1
+        while n < m:
+            val = nums[n] + nums[m]
+            if val <= k: 
+                n += 1
+            if val >= k: 
+                m -= 1
+            if val == k: 
+                result += 1
+        return result
