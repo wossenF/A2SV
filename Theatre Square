@@ -1,0 +1,10 @@
+n, m, a = map(int, input().split())
+if m%a==0:
+	value=m/a 
+else:
+	value=m/a+1 
+if n%a==0:
+	value0=n/a
+else:
+	value0=n/a+1
+print(value*value0)
